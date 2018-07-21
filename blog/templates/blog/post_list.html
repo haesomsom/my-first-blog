@@ -3,20 +3,16 @@
       <title>Haesom's blog</title>
   </head>
   <body>
-      <div>
-        <h1><a href="">Django Girls Blog</a></h1>
-      </div>
+    <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
 
-      <div>
-        <p>published: 21. 07. 2018, 1:53</p>
-        <h2><a href="">My First post</a></h2>
-        <p> This is my first blog I have made myself during the Djangogirlsseoulworkshop2018</p>
-      </div>
-
-      <div>
-        <p>published: 21. 07. 2018, 1:55</p>
-        <h2><a href="">My Second Post</a></h2>
-        <p> This is my second file! Yay!</p>
-      </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
   </body>
 </html>
